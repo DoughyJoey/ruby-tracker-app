@@ -19,8 +19,15 @@ gem 'jbuilder', '~> 2.7'
 # gem 'redis', '~> 4.0'
 # Use Active Model has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
+
+# devise used for authentication
 gem 'devise'
+
+# https://github.com/hisea/devise-bootstrap-views
+# customize devise with bootstrap
 gem 'devise-bootstrap-views', '~> 1.0'
+
+# used for stock data information
 gem 'iex-ruby-client'
 gem "font-awesome-rails"
 
