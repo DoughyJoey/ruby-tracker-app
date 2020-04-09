@@ -1,21 +1,28 @@
-<div class="results-block">
+<div class="results-block col-sm-9">
   <%= render 'layouts/messages' %>
 </div>
 
+<%-# renders stock search results -%>
 <% if @stock %>
   <div class="card card-header results-block">
     <strong>Symbol: </strong> <%= @stock.ticker %>
     <strong>Name: </strong> <%= @stock.name %>
     <strong>Price: </strong> <%= @stock.last_price %>
+
+    <%-# show add to portfolio button if the user isn't tracking stock -%>
     <% if current_user.can_track_stock?(@stock.ticker) %>
       <%= link_to 'Add to portfolio', user_stocks_path(user: current_user, ticker: @stock.ticker),
                                     class: "btn btn-sm btn-success", method: :post %>
+
+    <%-# notify the user that they are already tracking stock -%>
     <% else %>
       <span class="badge badge-secondary">
         You are already tracking
+        <%-# display 10 stocks if the user has exceed their limit -%>
         <% if !current_user.under_stock_limit? %>
           10 stocks
         <% end %>
+        <%-# display this stock if they have not exceeded their limit -%>
         <% if current_user.stock_already_tracked?(@stock.ticker) %>
           this stock
         <% end %>

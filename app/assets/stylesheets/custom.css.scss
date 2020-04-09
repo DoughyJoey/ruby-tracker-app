@@ -1,33 +1,40 @@
 @import 'bootstrap/dist/css/bootstrap';
 
-/*
+/* logo styling */
 .navbar-brand {
-    font-size: 3rem;
+    font-size: 27px;
+    font-style: italic;
 }
-*/
 
+/* creates padding between portfolio title and search area */
 .search-area {
     padding-top: 50px;
 }
 
+/* remove padding between search input and search button */
 .no-right-padding {
     padding-right: 0 !important;
 }
 
+/* remove padding between search input and search button */
 .no-left-padding {
     padding-left: 0 !important;
 }
 
+/* styling for stock results */
 .results-block {
     display: inline-block;
     margin-bottom: 1rem;
 }
 
+/* logout button styling */
 .logout-button {
     margin-right: 5px;
 }
 
+/* navigation username styling */
 .user-name {
     margin-top: 3.5%;
     padding-right: 5px;
+    color: white;
 }

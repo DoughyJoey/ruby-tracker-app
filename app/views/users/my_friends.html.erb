@@ -1,5 +1,6 @@
 <h1>Friends</h1>
 
+<%-# search input for friends -%>
 <div class='search-area'>
   <h3>Search Friends</h3>
   <%= form_tag search_friend_path, remote: true, method: :get do %>
@@ -7,8 +8,9 @@
       <div class="col-sm-9 no-right-padding">
         <%= text_field_tag :friend, params[:friend], placeholder: "Name or email", autofocus: true, class: "form-control form-control-lg" %>
       </div>
+      <%-# search button -%>
       <div class="col-sm-3 no-left-padding">
-        <%= button_tag type: :submit, class: "btn btn-success" do %>
+        <%= button_tag type: :submit, class: "btn btn-info" do %>
           <%= fa_icon 'search 2x' %>
         <% end %>
       </div>
@@ -20,6 +22,7 @@
 
 </div>
 
+<%-# if the user is following friends, render the friends list -%>
 <% if !@friends.empty? %>
   <%= render 'friends/list' %>
 <% end %>

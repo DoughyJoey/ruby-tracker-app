@@ -1,14 +1,20 @@
-<h1>My Portfolio</h1>
+<h1>My Stock Portfolio</h1>
 
 <div class='search-area'>
   <h3>Search Stocks</h3>
+
+  <%-# submits to search_stock_path -%>
+  <%-# makes it an AJAX request -%>
   <%= form_tag search_stock_path, remote: true, method: :get do %>
+    <%-# search input -%>
     <div class="form-group row">
       <div class="col-sm-9 no-right-padding">
         <%= text_field_tag :stock, params[:stock], placeholder: "Stock ticker symbol", autofocus: true, class: "form-control form-control-lg" %>
       </div>
+
+    <%-# search button -%>
       <div class="col-sm-3 no-left-padding">
-        <%= button_tag type: :submit, class: "btn btn-success" do %>
+        <%= button_tag type: :submit, class: "btn btn-info" do %>
           <%= fa_icon 'search 2x' %>
         <% end %>
       </div>
@@ -18,6 +24,7 @@
 <div id="results">
 
 </div>
+<%-# if the user is tracking stocks, render list.html.erb -%>
 <% if !@tracked_stocks.empty? %>
   <%= render 'stocks/list'%>
 <% end %>
