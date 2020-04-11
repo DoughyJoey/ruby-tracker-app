@@ -11,6 +11,10 @@ Rails.application.routes.draw do
   get 'my_friends', to: 'users#my_friends'
   # get search_friend, send it to users which has a search action
   get 'search_friend', to: 'users#search'
+  # get crypto news
+  get 'crypto/news'
+  # get crypto price
+  get 'crypto/price'
   # allows us to follow and remove friends
   resources :friendships, only: [:create, :destroy]
   # allows us to view a users profile
