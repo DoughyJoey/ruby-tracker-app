@@ -15,10 +15,14 @@ class CryptoController < ApplicationController
         require 'net/http'
         require 'json'
 
-        @prices_url = 'https://min-api.cryptocompare.com/data/pricemultifull?fsyms=XRP&tsyms=USD'
+        @prices_url = 'https://min-api.cryptocompare.com/data/pricemultifull?fsyms=BTC,ETH,XRP,USDT,BCH,BSV,LTC,EOS,BNB,XTZ&tsyms=USD'
         @prices_uri = URI(@prices_url)
         @prices_response = Net::HTTP.get(@prices_uri)
         @prices = JSON.parse(@prices_response)
+
+    end
+
+    def result
 
     end
 end
