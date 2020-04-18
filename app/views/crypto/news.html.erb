@@ -1,17 +1,20 @@
+<h1>Latest Crypto News</h1><br/><br/>
+
 <div class="container">
     <div class="row">
 
+<%# loops through the news data and pulls out the require info %>
 <% for x in @news["Data"] %>
-        <div class="col-sm">
-            <div class="card" style="width: 18rem;">
+        <div class="col-lg-4 d-flex align-items-stretch">
+            <div class="card" style="width: 18rem; margin-top: 8%; text-align: center;">
             <img class="card-img-top" src="<%= x["imageurl"] %>" alt="<%= x["source"] %>">
                 <div class="card-body">
                     <h5 class="card-title"><%= x["title"] %></h5>
                     <p class="card-text"><%= x["body"] %></p>
-                    <a href="<%= x["url"] %>" class="btn btn-secondary">Read More...</a>
+                    <a href="<%= x["url"] %>" class="btn btn-secondary">Read More</a>
                 </div>
             </div>
-            <br/>
+           <br/>
         </div>
     <% end %>
   </div>

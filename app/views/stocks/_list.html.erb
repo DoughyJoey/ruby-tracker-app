@@ -18,6 +18,7 @@
             <td><%= stock.name %></td>
             <td><%= stock.last_price %></td>
             <%-# if the current user can track a stock, allow them to add to portfolio -%>
+            <%-# this enables a user to track stocks from a friends profile -%>
             <td><% if current_user.can_track_stock?(stock.ticker) %>
                   <%= link_to 'Add to portfolio', user_stocks_path(user: current_user, ticker: stock.ticker),
                                     class: "btn btn-sm btn-success", method: :post %>

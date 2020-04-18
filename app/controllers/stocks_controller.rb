@@ -7,14 +7,14 @@ class StocksController < ApplicationController
         @stock = Stock.new_lookup(params[:stock])
         if @stock
           respond_to do |format|
-            # renders using js - enables us to us AJAX
+            # renders using js - enables us to use AJAX
             format.js { render partial: 'users/result' }
           end
         else
           # if symbol is incorrect
           respond_to do |format|
             flash.now[:alert] = "Please enter a valid symbol to search"
-            # renders using js - enables us to us AJAX
+            # renders using js - enables us to use AJAX
             format.js { render partial: 'users/result' }
           end
         end    
@@ -22,7 +22,7 @@ class StocksController < ApplicationController
         # if no symbol was submitted
         respond_to do |format|
           flash.now[:alert] = "Please enter a symbol to search"
-          # renders using js - enables us to us AJAX
+          # renders using js - enables us to use AJAX
           format.js { render partial: 'users/result' }
         end
       end

@@ -3,6 +3,7 @@
 </div>
 
 <%-# renders stock search results -%>
+<%-# only if stock instance variable is found -%>
 <% if @stock %>
   <div class="card card-header results-block">
     <strong>Symbol: </strong> <%= @stock.ticker %>

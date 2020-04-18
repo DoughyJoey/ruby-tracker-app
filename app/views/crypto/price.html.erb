@@ -1,33 +1,33 @@
-<h1>Top Ten Crypto</h1><br/>
+<h1>Top Ten Cryptocurrencies</h1><br/><br/>
 
-<%-# lists all the stocks the current user is tracking -%>
+<%# lists the current top ten cryptocurrencies %>
 <div class="row">
   <div class="col-9">  
     <table class="table table-bordered table-hover">
-  <thead class="thead-dark">
-    <tr>
-      <th scope="col">Name</th>
-      <th scope="col">Price</th>
-      <th scope="col">24hr High</th>
-      <th scope="col">24hr Low</th>
-      <th scope="col">Market Cap</th>
-    </tr>
-    </thead>
-<tbody>
-    <% @prices["DISPLAY"].each do |key, value| %>
+      <thead class="thead-dark">
+        <tr>
+          <th scope="col">Name</th>
+          <th scope="col">Price</th>
+          <th scope="col">24hr High</th>
+          <th scope="col">24hr Low</th>
+          <th scope="col">Market Cap</th>
+        </tr>
+        </thead>
+      <tbody>
+  <%# loops through the price data and pulls out the require info %>
+        <% @prices["DISPLAY"].each do |key, value| %>
 
 
-    <tr>
-      <td><%= key %></td>
-      <td><%= value["USD"]["PRICE"] %></td>
-      <td><%= value["USD"]["HIGHDAY"] %></td>
-      <td><%= value["USD"]["LOWDAY"] %></td>
-      <td><%= value["USD"]["MKTCAP"] %></td>
-    </tr>
-    <% end %>
-  </tbody>
-</table>
+        <tr>
+          <td><%= key %></td>
+          <td><%= value["USD"]["PRICE"] %></td>
+          <td><%= value["USD"]["HIGHDAY"] %></td>
+          <td><%= value["USD"]["LOWDAY"] %></td>
+          <td><%= value["USD"]["MKTCAP"] %></td>
+        </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
 </div>
-</div>
-
 <br/>

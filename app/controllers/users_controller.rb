@@ -12,7 +12,7 @@ class UsersController < ApplicationController
     @friends = current_user.friends
   end
 
-  # show a users profile and their tracked stocks
+  # show a users (friends) profile and their tracked stocks
   def show
     @user = User.find(params[:id])
     @tracked_stocks = @user.stocks

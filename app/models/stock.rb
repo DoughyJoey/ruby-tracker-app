@@ -15,7 +15,7 @@ class Stock < ApplicationRecord
             secret_token: Rails.application.credentials.iex_client[:sandbox_api_secret_key],
             endpoint: 'https://sandbox.iexapis.com/v1'
           )
-        # returns a custom stock object
+        # returns a new custom stock object
         begin
             new(ticker: ticker_symbol, name: client.company(ticker_symbol).company_name, last_price: client.price(ticker_symbol))
         # if stock object was not found
