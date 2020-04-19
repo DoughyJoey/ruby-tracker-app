@@ -13,4 +13,16 @@ class UserTest < ActiveSupport::TestCase
     though at least one of the forename,
     surname and/or email were not provided!")
    end
+
+   test "must allow only letters in firstname and lastname" do
+    user = User.new(first_name: "John1",
+    last_name: "Davidson1",
+    email: "john.davidson@email.ie")
+    assert_equal(false, user.save, "saved the customer even
+    though name contains non-letters!")
+    end
+    
+    
+
+
 end
