@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :inquiries
   # enables users to track and remove stocks
   resources :user_stocks, only: [:create, :destroy]
   devise_for :users

@@ -1,0 +1,27 @@
+<div class="inquiry-message-margin">
+  <div class="card" style="width: 18rem;">
+    <div class="card-body card border-secondary mb-3">
+      <%# displays first name %>
+      <h6 class="card-subtitle mb-2 text-muted">
+        <strong>Firstname:</strong>
+        <%= @inquiry.firstname %>
+      </h6>
+      <%# displays last name %>
+      <h6 class="card-subtitle mb-2 text-muted">
+        <strong>Lastname:</strong>
+        <%= @inquiry.lastname %>
+      </h6>
+      <%# displays email %>
+      <h6 class="card-subtitle mb-2 text-muted">
+        <strong>Email:</strong>
+        <%= @inquiry.email %>
+      </h6>
+      <%# displays message %>
+      <p class="card border-secondary mb-3 card text-white bg-secondary mb-3">
+        <strong>Message:</strong>
+        <%= @inquiry.message %>
+      </p>
+      <%= link_to 'Back', inquiries_path, class: "btn btn-primary" %>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,40 @@
+<h1>Inquiries</h1><br/>
+
+<%# only displays table when inquiries table is not empty %>
+<% if !@inquiries.empty? %>
+<div class="row">
+  <div class="col-9">  
+    <table class="table table-bordered table-hover">
+      <thead class="thead-dark">
+        <tr>
+          <th scope="col">First Name</th>
+          <th scope="col">Last Name</th>
+          <th scope="col">Email</th>
+          <th scope="col">Messages</th>
+          <th scope="col">Actions</th>
+        </tr>
+      </thead>
+
+        <tbody>
+      <%-# iterates through each inquiry -%>
+        <% @inquiries.each do |inquiry| %>
+          <tr>
+            <td><%= inquiry.firstname %></td>
+            <td><%= inquiry.lastname %></td>
+            <td><%= inquiry.email %></td>
+            <td><%= inquiry.message %></td>
+            <%# acttion buttons %>
+            <td class="btn-group"><%= link_to 'Show', inquiry, class: 'btn btn-sm btn-info' %>
+            <%= link_to 'Destroy', inquiry, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-sm btn-warning' %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<% end %>
+
+<%# button to new inquiry page %>
+<%= link_to 'New Inquiry', new_inquiry_path, class: 'btn btn-sm btn-success' %>
+
